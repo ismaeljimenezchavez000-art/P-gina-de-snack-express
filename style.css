@@ -1,0 +1,82 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    color: #00CED1; /* Verde agua */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #00CED1;
+}
+
+h3 {
+    background-color: #00CED1;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 30px 0 20px;
+    font-weight: 500;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 10px rgba(0, 206, 209, 0.3);
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Título de la página</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNACK EXPRESS - Menú</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .menu-item {
+            background: #f9f9f9;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .add-to-cart {
+            background-color: #00CED1;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #00a5a8;
+        }
+        
+        .carrito {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 300px;
+            z-index: 1000;
+            border: 1px solid #eee;
+        }
+        
+        .carrito h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .carrito-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        
+        .carrito-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .carrito-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: right;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>MENÚ</h2>
+        <div class="menu-grid">
+            <!-- Papas Fritas -->
+            <div class="menu-item">
+                <h3>Papas Fritas</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%23FFD700' width='200' height='150'/%3e%3cpath fill='%23D2691E' d='M40,70 L160,70 L150,120 L50,120 Z'/%3e%3c/svg%3e" alt="Papas Fritas">
+                <p>Crujientes papas doradas, cortadas al instante y sazonadas con nuestra mezcla secreta de especias. Perfectas para acompañar cualquier comida o disfrutar solas.</p>
+                <button class="add-to-cart" data-item="Papas Fritas" data-price="4.50">Agregar al carrito - $4.50</button>
+            </div>
+            
+            <!-- Hot Dogs -->
+            <div class="menu-item">
+                <h3>Hot Dogs</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%23FF6347' width='200' height='150'/%3e%3cellipse fill='%23D2691E' cx='100' cy='75' rx='80' ry='40'/%3e%3c/svg%3e" alt="Hot Dogs">
+                <p>Nuestros clásicos hot dogs con salchicha premium, servidos en pan recién horneado. Personalízalos con cebolla caramelizada, chili, queso fundido y más.</p>
+                <button class="add-to-cart" data-item="Hot Dog" data-price="5.25">Agregar al carrito - $5.25</button>
+            </div>
+            
+            <!-- Hamburguesas -->
+            <div class="menu-item">
+                <h3>Hamburguesas</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%238B4513' width='200' height='150'/%3e%3ccircle fill='%23D2691E' cx='100' cy='75' r='50'/%3e%3c/svg%3e" alt="Hamburguesas">
+                <p>Jugosas hamburguesas de carne 100% angus, con ingredientes frescos y pan artesanal. Desde la clásica hasta nuestras creaciones gourmet.</p>
+                <button class="add-to-cart" data-item="Hamburguesa" data-price="7.99">Agregar al carrito - $7.99</button>
+            </div>
+            
+            <!-- Lomitos -->
+            <div class="menu-item">
+                <h3>Lomitos</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%23A0522D' width='200' height='150'/%3e%3crect fill='%23D2691E' x='30' y='50' width='140' height='60' rx='10'/%3e%3c/svg%3e" alt="Lomitos">
+                <p>Deliciosos sándwiches de lomo con queso fundido, jamón, huevo y nuestra salsa especial. Una explosión de sabores que te transportará a la cocina argentina.</p>
+                <button class="add-to-cart" data-item="Lomito" data-price="8.75">Agregar al carrito - $8.75</button>
+            </div>
+            
+            <!-- Nachos con Queso -->
+            <div class="menu-item">
+                <h3>Nachos con Queso</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%23FFA500' width='200' height='150'/%3e%3cpath fill='%23D2691E' d='M30,50 Q100,30 170,50 L150,110 Q100,130 50,110 Z'/%3e%3c/svg%3e" alt="Nachos con Queso">
+                <p>Crujientes nachos cubiertos con queso cheddar fundido, jalapeños, guacamole y salsa. Ideal para compartir o disfrutar como plato principal.</p>
+                <button class="add-to-cart" data-item="Nachos con Queso" data-price="6.50">Agregar al carrito - $6.50</button>
+            </div>
+            
+            <!-- Batidos Naturales -->
+            <div class="menu-item">
+                <h3>Batidos Naturales</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%2398FB98' width='200' height='150'/%3e%3cellipse fill='%23FFD700' cx='100' cy='75' rx='50' ry='70'/%3e%3c/svg%3e" alt="Batidos Naturales">
+                <p>Refrescantes batidos preparados al momento con frutas frescas de temporada. Sin azúcares añadidos, solo el dulzor natural de la fruta. Opciones de leche, yogurt o agua.</p>
+                <button class="add-to-cart" data-item="Batido Natural" data-price="4.25">Agregar al carrito - $4.25</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Carrito de Compras -->
+    <div class="carrito">
+        <h3>TU PEDIDO</h3>
+        <div class="carrito-items" id="carrito-items">
+            <!-- Los items del carrito se añadirán aquí -->
+        </div>
+        <div class="carrito-total" id="carrito-total">
+            Total: $0.00
+        </div>
+        <button class="add-to-cart" style="width:100%; margin-top:15px;" id="realizar-pedido">Realizar Pedido</button>
+    </div>
+    
+    <script>
+        // Funcionalidad del carrito
+        const carrito = [];
+        const carritoItems = document.getElementById('carrito-items');
+        const carritoTotal = document.getElementById('carrito-total');
+        const realizarPedidoBtn = document.getElementById('realizar-pedido');
+        
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const item = e.target.getAttribute('data-item');
+                const price = parseFloat(e.target.getAttribute('data-price'));
+                
+                // Verificar si el item ya está en el carrito
+                const existingItem = carrito.find(i => i.name === item);
+                
+                if(existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    carrito.push({
+                        name: item,
+                        price: price,
+                        quantity: 1
+                    });
+                }
+                
+                actualizarCarrito();
+            });
+        });
+        
+        function actualizarCarrito() {
+            carritoItems.innerHTML = '';
+            let total = 0;
+            
+            carrito.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const itemElement = document.createElement('div');
+                itemElement.className = 'carrito-item';
+                itemElement.innerHTML = `
+                    <span>${item.name} x${item.quantity}</span>
+                    <span>$${itemTotal.toFixed(2)}</span>
+                `;
+                carritoItems.appendChild(itemElement);
+            });
+            
+            carritoTotal.textContent = `Total: $${total.toFixed(2)}`;
+        }
+        
+        realizarPedidoBtn.addEventListener('click', () => {
+            if(carrito.length > 0) {
+                alert('¡Pedido realizado con éxito! Gracias por su compra.');
+                carrito.length = 0;
+                actualizarCarrito();
+            } else {
+                alert('El carrito está vacío. Por favor, añada productos antes de realizar el pedido.');
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

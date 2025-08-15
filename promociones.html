@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Título de la página</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNACK EXPRESS - Promociones</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .promociones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .promocion-item {
+            background: #f9f9f9;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .promocion-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .promocion-item img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .precio-promo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #00CED1;
+            margin-top: 15px;
+            background-color: rgba(0, 206, 209, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>PROMOCIONES ESPECIALES</h2>
+        <div class="promociones-grid">
+            <!-- Combo Familiar -->
+            <div class="promocion-item">
+                <h3>Combo Familiar</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%23FFB6C1' width='200' height='150'/%3e%3crect fill='%23FFD700' x='30' y='40' width='140' height='80' rx='10'/%3e%3c/svg%3e" alt="Combo Familiar">
+                <p>Disfruta de una selección de nuestros mejores productos para toda la familia. Incluye 4 hamburguesas, 2 porciones de papas fritas grandes, 4 bebidas y un postre sorpresa. Ideal para compartir en familia.</p>
+                <p class="precio-promo">$29.99 (Ahorras $10)</p>
+            </div>
+            
+            <!-- Happy Hour -->
+            <div class="promocion-item">
+                <h3>Happy Hour</h3>
+                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3e%3crect fill='%2387CEEB' width='200' height='150'/%3e%3cpath fill='%23FFD700' d='M60,50 L140,50 Q180,60 160,100 Q140,140 100,120 Q60,140 40,100 Q20,60 60,50 Z'/%3e%3c/svg%3e" alt="Happy Hour">
+                <p>De 5pm a 7pm, todos los días, disfruta de nuestras bebidas y aperitivos con un 20% de descuento. Perfecto para relajarse después del trabajo con amigos o compañeros.</p>
+                <p class="precio-promo">20% OFF en bebidas y aperitivos</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>
